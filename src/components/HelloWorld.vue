@@ -1,8 +1,9 @@
 <template>
-	<div class="hello">
-		<h1>Random Fact</h1>
-		<button @click="fetchData">Click Me!</button>
-	</div>
+  <div class="hello">
+    <h1>Random Fact:</h1>
+    <button @click="fetchData">Click Me!</button>
+    <p v-if="fact">{{ fact }}</p>
+  </div>
 </template>
 <script>
 export default {
@@ -19,8 +20,8 @@ export default {
       fetch('https://facts-by-api-ninjas.p.rapidapi.com/v1/facts', {
         method: "GET",
         headers: {
-          "X-RapidAPI-Key": 'your-api-key',
-          "X-RapidAPI-Host": 'facts-by-api-ninjas.p.rapidapi.com',
+          'x-rapidapi-key': '78b89a85d4mshc474512e90b88b3p16e67ajsn8c4dd9d7e018',
+          'x-rapidapi-host': 'facts-by-api-ninjas.p.rapidapi.com',
         },
       })
         .then((response) => {
@@ -35,11 +36,10 @@ export default {
   },
 };
 </script>
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 button {
-	padding: 12px 32px;
-	font-size: 16px;
-	border-radius: 8px;
+padding: 12px 32px;
+font-size: 16px;
+border-radius: 8px;
 }
 </style>
